@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Librería</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img
+              src="img/logo-removeb.png"
+              width="200"
+              height="200"
+              class="d-inline-block align-top img-fluid"
+              alt="logo"
+            />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#myNavbar1"
+            aria-controls="myNavbar1"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-center" id="myNavbar1">
+            <div lc-helper="shortcode" class="live-shortcode me-auto">
+              <!--  lc_nav_menu -->
+              <ul id="menu-menu-1" class="navbar-nav">
+                <li
+                  class="menu-item menu-item-type-custom menu-item-object-custom nav-item nav-item-32739"
+                >
+                  <a href="#"  class="nav-link"
+                    >Inicio</a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home nav-item nav-item-32738"
+                >
+                  <a href="#" onclick="paginaBuscar()" class="nav-link">Buscar</a>
+                </li>
+              </ul>
+              <!-- /lc_nav_menu -->
+            </div>
+
+            <ul>
+              <li class="submenu">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  fill="currentColor"
+                  class="bi bi-cart2 modalCarrito"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"
+                  />
+                </svg>
+
+                <!-- MODAL -->
+                <div id="carrito" class="nav-card">
+                  <table class="carrito-tabla">
+                    <thead>
+                      <tr>
+                        <th>Imagen</th>
+                        <th>Titulo</th>
+                        <th>Autor</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                  <!-- <a href="#" id="vaciar-carrito" class="button"
+                        >Vaciar Carrito</a> -->
+                  <div class="d-grid gap-2">
+                    <button
+                      type="button"
+                      class="btn btn-outline-danger"
+                      id="vaciarCarritoBTN"
+                    >
+                      Vaciar Carrito
+                    </button>
+                  </div>
+                </div>
+
+                <!-- MODAL -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="container text-center py-5 mb-4">
+          <div class="p-5 mb-4 lc-block">
+            <div class="lc-block mb-4">
+              <div editable="rich">
+                <h2 class="fw-bold display-2">The quick brown fox jumps</h2>
+                <h2 class="fw-bold display-2">over the lazy dog<br /></h2>
+              </div>
+            </div>
+            <div class="lc-block mb-5">
+              <div editable="rich">
+                <p class="lead">
+                  Using a series of utilities, you can create this jumbotron.<br />just
+                  like the one in previous versions of Bootstrap.
+                </p>
+              </div>
+            </div>
+            <div class="lc-block mb-2">
+              <a class="btn btn-primary" href="#" role="button"
+                >Click me, I'm a button</a
+              >
+            </div>
+            <div class="lc-block">
+              <a class="btn btn-link btn-sm" href="#" role="button"
+                >Learn more</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LISTA DE LIBROS -->
+      <section>
+        <div class="container mt-4" id="lista-libros">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4" id="card-libro">
+              <div class="card shadow">
+                <img
+                  src="img/choque_de_reyes.jpg"
+                  class="card-img-top"
+                  alt="Portada del libro"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Choque de Reyes</h5>
+                  <h6 class="card-text">George R.R Martin</h6>
+                  <p class="card-text">Precio: $20</p>
+                  <div class="d-grid">
+                    <button class="btn btn-primary agregar-carrito" data-id="1">
+                      Agregar al carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="card shadow">
+                <img
+                  src="img/cuentos_de_hadas.jpg"
+                  class="card-img-top"
+                  alt="Portada del libro"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Cuentos de Hadas</h5>
+                  <h6 class="card-text">Stephen King</h6>
+                  <p class="card-text">Precio: $20</p>
+                  <div class="d-grid">
+                    <button class="btn btn-primary agregar-carrito" data-id="2">
+                      Agregar al carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="card shadow">
+                <img
+                  src="img/cuando_la_cigüeña_no_llega.jpg"
+                  class="card-img-top"
+                  alt="Portada del libro"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Cuando la Cigueña no Llega</h5>
+                  <h6 class="card-text">Wendy Cruz</h6>
+                  <p class="card-text">Precio: $20</p>
+                  <div class="d-grid">
+                    <button class="btn btn-primary agregar-carrito" data-id="3">
+                      Agregar al carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="card shadow">
+                <img
+                  src="img/cuesta_abajo.jpg"
+                  class="card-img-top"
+                  alt="Portada del libro"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Cuesta Abajo</h5>
+                  <h6 class="card-text">Michael Connelly</h6>
+                  <p class="card-text">Precio: $20</p>
+                  <div class="d-grid">
+                    <button class="btn btn-primary agregar-carrito" data-id="4">
+                      Agregar al carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="card shadow">
+                <img
+                  src="img/el_dia_que_se_abrio_el_cielo.jpg"
+                  class="card-img-top"
+                  alt="Portada del libro"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">El Día que se Abrió el Cielo</h5>
+                  <h6 class="card-text">Samantha Shannon</h6>
+                  <p class="card-text">Precio: $20</p>
+                  <div class="d-grid">
+                    <button class="btn btn-primary agregar-carrito" data-id="5">
+                      Agregar al carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="card shadow">
+                <img
+                  src="img/despues.jpg"
+                  class="card-img-top"
+                  alt="Portada del libro"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Después</h5>
+                  <h6 class="card-text">Stephen King</h6>
+                  <p class="card-text">Precio: $20</p>
+                  <div class="d-grid">
+                    <button class="btn btn-primary agregar-carrito" data-id="6">
+                      Agregar al carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="card shadow">
+                <img
+                  src="img/la_biblioteca_de_los_nuevos_comiezos.jpg"
+                  class="card-img-top"
+                  alt="Portada del libro"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    La Bilioteca de los Nuevos Comienzos
+                  </h5>
+                  <h6 class="card-text">Michiko Aoyama</h6>
+                  <h6 class="card-text">Precio: $20</h6>
+                  <div class="d-grid">
+                    <button class="btn btn-primary agregar-carrito" data-id="7">
+                      Agregar al carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+              <div class="card shadow">
+                <img
+                  src="img/ocho_millones_de_maneras_de_morir.jpg"
+                  class="card-img-top"
+                  alt="Portada del libro"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Ocho Millones de Maneras de Morir</h5>
+                  <h6 class="card-text">Lawrence Block</h6>
+                  <p class="card-text">Precio: $20</p>
+                  <div class="d-grid">
+                    <button class="btn btn-primary agregar-carrito" data-id="8">
+                      Agregar al carrito
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FIN LISTA DE LIBROS -->
+    </main>
+
+    <footer>
+      <section>
+        <div class="py-5 container bg-light position-relative rounded">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="lc-block mb-2">
+                <img
+                  alt="logo"
+                  class="img-fluid"
+                  src="https://cdn.livecanvas.com/media/logos/logo-2.svg"
+                  style="height: 10vh"
+                />
+              </div>
+              <div class="lc-block text-dark mb-2">
+                <div editable="rich">
+                  <h4>
+                    <em>My Company Slogan</em>
+                  </h4>
+                </div>
+              </div>
+              <div class="lc-block text-dark text-center">
+                <div editable="rich">
+                  <p>Copyright © My Company 2020</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 offset-md-3 d-flex justify-content-center">
+              <div class="lc-block text-center text-dark py-5 mx-2">
+                <a
+                  class="text-decoration-none"
+                  href="https://www.facebook.com/"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    width="2em"
+                    height="2em"
+                    lc-helper="svg-icon"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+              <div class="lc-block text-center text-dark py-5 mx-2">
+                <a
+                  class="text-decoration-none"
+                  href="https://www.pinterest.com/"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    width="2em"
+                    height="2em"
+                    lc-helper="svg-icon"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M448 80v352c0 26.5-21.5 48-48 48H154.4c9.8-16.4 22.4-40 27.4-59.3 3-11.5 15.3-58.4 15.3-58.4 8 15.3 31.4 28.2 56.3 28.2 74.1 0 127.4-68.1 127.4-152.7 0-81.1-66.2-141.8-151.4-141.8-106 0-162.2 71.1-162.2 148.6 0 36 19.2 80.8 49.8 95.1 4.7 2.2 7.1 1.2 8.2-3.3.8-3.4 5-20.1 6.8-27.8.6-2.5.3-4.6-1.7-7-10.1-12.3-18.3-34.9-18.3-56 0-54.2 41-106.6 110.9-106.6 60.3 0 102.6 41.1 102.6 99.9 0 66.4-33.5 112.4-77.2 112.4-24.1 0-42.1-19.9-36.4-44.4 6.9-29.2 20.3-60.7 20.3-81.8 0-53-75.5-45.7-75.5 25 0 21.7 7.3 36.5 7.3 36.5-31.4 132.8-36.1 134.5-29.6 192.6l2.2.8H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+              <div class="lc-block text-center text-dark py-5 mx-2">
+                <a
+                  class="text-decoration-none"
+                  href="https://www.linkedin.com/"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    width="2em"
+                    height="2em"
+                    lc-helper="svg-icon"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+              <div class="lc-block text-center text-dark py-5 mx-2">
+                <a
+                  class="text-decoration-none"
+                  href="https://www.instagram.com/"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    width="2em"
+                    height="2em"
+                    lc-helper="svg-icon"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="container-fluid"
+          lc-helper="background"
+          style="
+            height: 30vh;
+            background: url(https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1980&amp;h=768&amp;fit=crop&amp;ixid=eyJhcHBfaWQiOjM3ODR9)
+              center / cover no-repeat;
+            margin-top: -100px;
+          "
+        ></div>
+      </section>
+    </footer>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src = "js/routing.js" ></script>
+  </body>
+</html>
